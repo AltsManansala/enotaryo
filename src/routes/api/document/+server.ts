@@ -23,8 +23,6 @@ export const POST: RequestHandler = async ({ locals: { ctx }, request }) => {
 	const start = performance.now();
 	insertDocument(ctx.db, title, file);
 
-	// add scanner here
-	// function for document relations
 	const documentHandlingTime = performance.now() - start;
 
 	ctx.logger.info({ documentHandlingTime });

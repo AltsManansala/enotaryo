@@ -4,7 +4,7 @@ import { relations } from 'drizzle-orm';
 export const app = pgSchema('app');
 
 export const document = app.table('document', {
-	id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
+	id: uuid('id').notNull().primaryKey().defaultRandom(),
 	title: text('title'),
 	file: text('file'),
 });
@@ -22,6 +22,7 @@ export const signature = app.table('signature', {
 	signatoryId: text('signatory_id')
 		.notNull()
 		.references(() => signatory.id),
+	documentId: uuid('document_id').references(() => document.id),
 	isVerified: boolean('is_verified').notNull().default(false)
 });
 
