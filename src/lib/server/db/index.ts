@@ -12,8 +12,8 @@ export type Database = typeof db;
 export type Transaction = Parameters<Parameters<typeof db.transaction>[0]>[0];
 export type Interface = Database | Transaction;
 
-export async function insertDocument(db: Interface, title: string) {
-	return await db.insert(schema.document).values({ title });
+export async function insertDocument(db: Interface, title: string, file: string) {
+	return await db.insert(schema.document).values({ title, file });
 }
 
 export async function insertSignatory(db: Interface, id: string) {

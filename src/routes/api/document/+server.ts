@@ -5,8 +5,10 @@ import { strict } from 'assert';
 import { safeParse } from 'valibot';
 
 export const POST: RequestHandler = async ({ locals: { ctx }, request }) => {
-	const requestJson = await request.json();
-	const newDocumentResult = safeParse(NewDocument, requestJson);
+	const { title, file } = await request.json();
+	console.log(title);
+	console.log(file);
+
 	strict(typeof ctx != 'undefined');
 
 	if (!newDocumentResult.success) {
@@ -16,10 +18,13 @@ export const POST: RequestHandler = async ({ locals: { ctx }, request }) => {
 
 	const { title } = newDocumentResult.output as NewDocument;
 
-	ctx.logger.info({ title });
+	ctx.logger.info({ title, file });
 
 	const start = performance.now();
-	insertDocument(ctx.db, title);
+	insertDocument(ctx.db, title, file);
+
+	// add scanner here
+	// function for document relations
 	const documentHandlingTime = performance.now() - start;
 
 	ctx.logger.info({ documentHandlingTime });

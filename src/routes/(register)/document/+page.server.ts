@@ -4,7 +4,7 @@ export const actions: Actions = {
 	default: async ({ request, fetch }) => {
 		interface Data {
 			title: string;
-			blob: Blob;
+			file: string;
 		}
 
 		const formData = await request.formData();
@@ -13,8 +13,9 @@ export const actions: Actions = {
 		const url = URL.createObjectURL(file);
 		const res = await fetch(url);
 		const blobFile = await res.blob();
-
-		const data: Data = { title: formData.get('') as string, blob: blobFile };
+		const textBlob = await blobFile.text();
+		
+		const data: Data = { title: formData.get('') as string, file: textBlob as string }
 
 		await fetch('/api/document', {
 			method: 'post',

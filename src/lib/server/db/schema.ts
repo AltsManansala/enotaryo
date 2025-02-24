@@ -1,11 +1,17 @@
-import { text, uuid, pgSchema, boolean, char, timestamp, bigint, json } from 'drizzle-orm/pg-core';
+import { integer, text, uuid, pgSchema, boolean, char, timestamp, bigint, json } from 'drizzle-orm/pg-core';
+import { relations } from 'drizzle-orm';
 
 export const app = pgSchema('app');
 
 export const document = app.table('document', {
-	id: uuid('id').notNull().primaryKey().defaultRandom(),
-	title: text('title')
+	id: integer('id').primaryKey().generatedAlwaysAsIdentity(),
+	title: text('title'),
+	file: text('file'),
 });
+
+export const docSignatories = relations(document, ({ many }) => ({
+	signatory: many(signatory),
+}))
 
 export const signatory = app.table('signatory', {
 	id: char('id', { length: 19 }).notNull().primaryKey()
