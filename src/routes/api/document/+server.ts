@@ -5,9 +5,8 @@ import { strict } from 'assert';
 import { safeParse } from 'valibot';
 
 export const POST: RequestHandler = async ({ locals: { ctx }, request }) => {
-	const { title, file } = await request.json();
-	console.log(title);
-	console.log(file);
+	const requestJson = await request.json();
+	const newDocumentResult = safeParse(NewDocument, requestJson);
 
 	strict(typeof ctx != 'undefined');
 
@@ -16,7 +15,7 @@ export const POST: RequestHandler = async ({ locals: { ctx }, request }) => {
 		return error(400, { message: 'malformed new document request' });
 	}
 
-	const { title } = newDocumentResult.output as NewDocument;
+	const { title, file } = newDocumentResult.output as NewDocument;
 
 	ctx.logger.info({ title, file });
 
