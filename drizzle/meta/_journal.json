@@ -1,83 +1,90 @@
 {
-	"version": "7",
-	"dialect": "postgresql",
-	"entries": [
-		{
-			"idx": 0,
-			"version": "7",
-			"when": 1737621311323,
-			"tag": "0000_init",
-			"breakpoints": true
-		},
-		{
-			"idx": 1,
-			"version": "7",
-			"when": 1737621494576,
-			"tag": "0001_ensure_unique_ids",
-			"breakpoints": true
-		},
-		{
-			"idx": 2,
-			"version": "7",
-			"when": 1737621555132,
-			"tag": "0002_correct_deprecated_syntax",
-			"breakpoints": true
-		},
-		{
-			"idx": 3,
-			"version": "7",
-			"when": 1738553226643,
-			"tag": "0003_add_signatory_sessions",
-			"breakpoints": true
-		},
-		{
-			"idx": 4,
-			"version": "7",
-			"when": 1738846598092,
-			"tag": "0004_add_authentication",
-			"breakpoints": true
-		},
-		{
-			"idx": 5,
-			"version": "7",
-			"when": 1738853637454,
-			"tag": "0005_move_auth_tables",
-			"breakpoints": true
-		},
-		{
-			"idx": 6,
-			"version": "7",
-			"when": 1738854145119,
-			"tag": "0006_fix_duplicate_id",
-			"breakpoints": true
-		},
-		{
-			"idx": 7,
-			"version": "7",
-			"when": 1739094025573,
-			"tag": "0007_deprecate_document_signatory",
-			"breakpoints": true
-		},
-		{
-			"idx": 8,
-			"version": "7",
-			"when": 1739095280785,
-			"tag": "0008_add_otp_transactions",
-			"breakpoints": true
-		},
-		{
-			"idx": 9,
-			"version": "7",
-			"when": 1739639963048,
-			"tag": "0009_rename_signatory_sessions",
-			"breakpoints": true
-		},
-		{
-			"idx": 10,
-			"version": "7",
-			"when": 1739864512407,
-			"tag": "0010_add_push_subscriptions",
-			"breakpoints": true
-		}
-	]
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1737621311323,
+      "tag": "0000_init",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1737621494576,
+      "tag": "0001_ensure_unique_ids",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737621555132,
+      "tag": "0002_correct_deprecated_syntax",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1738553226643,
+      "tag": "0003_add_signatory_sessions",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1738846598092,
+      "tag": "0004_add_authentication",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1738853637454,
+      "tag": "0005_move_auth_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1738854145119,
+      "tag": "0006_fix_duplicate_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1739094025573,
+      "tag": "0007_deprecate_document_signatory",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1739095280785,
+      "tag": "0008_add_otp_transactions",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1739639963048,
+      "tag": "0009_rename_signatory_sessions",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1739864512407,
+      "tag": "0010_add_push_subscriptions",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1740379384829,
+      "tag": "0011_add_document_file",
+      "breakpoints": true
+    }
+  ]
 }
